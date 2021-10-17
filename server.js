@@ -1,8 +1,9 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const notesRouter = require('./routes/NoteRoutes.js');
 
-const DB_URL = "mongodb+srv://sa:s3cr3t@cluster0.qa3t4.mongodb.net/gbc-fall2020?retryWrites=true&w=majority"
+const DB_URL = "mongodb+srv://harshpatelhp7:DOGEtomoon2021@comp3123.h9dis.mongodb.net/db_f2021_3123?retryWrites=true&w=majority"
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
@@ -25,7 +26,8 @@ app.get('/', (req, res) => {
     res.send("<h1>Welcome to Note taking application - Week06 Exercise</h1>");
 });
 
+app.use(notesRouter);
 
 app.listen(8081, () => {
-    console.log("Server is listening on port 3000");
+    console.log("Server is listening on http://localhost:8081");
 });

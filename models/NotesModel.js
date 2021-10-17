@@ -6,3 +6,24 @@ const mongoose = require('mongoose');
 //      - priority (Value can be HIGH, LOW or MEDUIM)
 //      - dateAdded
 //      - dateUpdated
+
+const NoteSchema = new mongoose.Schema({
+    noteTitle: {
+        type : String,
+    },
+    noteDescription : {
+        type : String,
+    },
+    priority : {
+        type : String,
+    },
+    dateAdded : {
+        type : Date
+    },
+    dateUpdated :{
+        type : Date
+    }
+});
+
+const Note = mongoose.model("Note", NoteSchema);
+module.exports = Note;
